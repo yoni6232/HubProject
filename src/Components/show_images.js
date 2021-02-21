@@ -25,7 +25,7 @@ export default function ImageShow() {
         setLoading(false)
       })
       .catch(err => console.log("Error",err))
-  
+     
   },[])
 
   //On click pic initialized the author the url 
@@ -46,13 +46,13 @@ export default function ImageShow() {
     :
     data.map(item => (
       <img 
-      className = "zoom"
+      className = "image"
       key={item.id} 
       src={item.download_url} 
-      onClick={() =>choose(item)}
-      
-      
+      onClick={() =>choose(item)}    
      />
+     
+
 
    ))
     }
@@ -60,10 +60,8 @@ export default function ImageShow() {
     <Modal    
         show={show}
         onHide={() => setShow(false)}
-        className="container---popup"
-      
+        className="container---popup"  
     >
-   
         <Modal.Body>
         <img src={url} className= "center-image" onClick={handleClose}>
         </img> </Modal.Body>
