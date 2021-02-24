@@ -8,9 +8,9 @@ import Image from 'material-ui-image'
 
 export default function ImageShow() {
 
-  const [author,setauthor] = useState([])
+  const [author,setAuthor] = useState([])
   const [url,set_url] = useState( null)
-  const [data,setdata] = useState([])
+  const [data,setData] = useState([])
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
 
@@ -21,7 +21,7 @@ export default function ImageShow() {
       })
       .then(resp => resp.json())
       .then(resp=>{
-        setdata(resp)
+        setData(resp)
       })
       .catch(err => console.log("Error",err))
      
@@ -29,7 +29,7 @@ export default function ImageShow() {
 
   //On click pic initialized the author the url 
  const choose =(item) =>{
-  setauthor(item.author)
+  setAuthor(item.author)
   set_url(item.download_url)
   setShow(true)
   
@@ -47,6 +47,7 @@ export default function ImageShow() {
       onClick={() =>choose(item)}    
       alt={item.author}
      />
+     
   <h2 class="centered">{item.author}</h2>
      </div>
 
