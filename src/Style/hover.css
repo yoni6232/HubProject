@@ -1,13 +1,10 @@
 
   .image { 
     
-    position: fixed;
     bottom: 100px;
       padding: 15px;
-      transition: transform .2s;
       width: 200px !important;
       height: 200px !important;
-      margin: 0 auto;
  }
  .image:hover {
     -ms-transform: scale(1.5); 

@@ -82,13 +82,20 @@
 
 .column {
   float: left;
-  padding: 140px;
+  padding: 30px;
   position: relative;
   text-align: center;
   color: white;
-
-  bottom:80px;
-  right:80px;
+  width: 200px !important;
+  height: 200px !important;
+  left: 100px;
+ 
+}
+.column:hover {
+  -ms-transform: scale(1.5); 
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5); 
+  cursor: pointer;
 }
 .row::after {
   content: "";

@@ -41,14 +41,13 @@ export default function ImageShow() {
     {data.map(item => (
       <div className="column" >
       <Image 
-      className="image"
+      color="lightblue"
       key={item.id} 
       src={item.download_url} 
       onClick={() =>choose(item)}    
       alt={item.author}
      />
      
-  <h2 class="centered">{item.author}</h2>
      </div>
 
 
