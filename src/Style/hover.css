@@ -1,27 +1,12 @@
-.zoom {
-    flex-direction:row ;
-  flex-wrap:wrap ;
-    padding: 10px;
-    transition: transform .2s;
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
-  }
-  
-  .zoom:hover {
-    -ms-transform: scale(1.5); 
-    -webkit-transform: scale(1.5);
-    transform: scale(1.5); 
-    cursor: pointer;
-  }
 
   .image { 
-    flex-direction:row ;
-    flex-wrap:wrap ;
-      padding: 10px;
+    
+    position: fixed;
+    bottom: 100px;
+      padding: 15px;
       transition: transform .2s;
-      width: 200px;
-      height: 200px;
+      width: 200px !important;
+      height: 200px !important;
       margin: 0 auto;
  }
  .image:hover {
@@ -46,3 +31,4 @@
     background: rgba(0, 0, 0, 0.4);
     padding: 10px; 
  }
+ 

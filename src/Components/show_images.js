@@ -2,7 +2,7 @@ import React, {useState,useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal'
 import 'react-image-lightbox/style.css';
 import '../Style/hover.css'
-import Loader from 'react-loader-spinner'
+import Image from 'material-ui-image'
 
 
 
@@ -12,9 +12,9 @@ export default function ImageShow() {
   const [url,set_url] = useState( null)
   const [data,setdata] = useState([])
   const [show, setShow] = useState(false);
-  const [isLoading, setLoading] = useState(true)
   const handleClose = () => setShow(false);
 
+  
   //Get the data from picsum as a json file
   useEffect(()=>{
     fetch(`https://picsum.photos/v2/list`, {
@@ -22,7 +22,6 @@ export default function ImageShow() {
       .then(resp => resp.json())
       .then(resp=>{
         setdata(resp)
-        setLoading(false)
       })
       .catch(err => console.log("Error",err))
      
@@ -36,22 +35,20 @@ export default function ImageShow() {
   
   }
 
+
   return (
- 
-  
-    
-    <div  className="container">
-    {isLoading ? 
-      <Loader className='loader' type="Circles" color="black" height={150} width={150} />
-    :
-    data.map(item => (
-      <img 
-      className = "image"
+    <div className="row">
+    {data.map(item => (
+      <div className="column" >
+      <Image 
+      className="image"
       key={item.id} 
       src={item.download_url} 
       onClick={() =>choose(item)}    
+      alt={item.author}
      />
-     
+  <h2 class="centered">{item.author}</h2>
+     </div>
 
 
    ))
@@ -63,8 +60,10 @@ export default function ImageShow() {
         className="container---popup"  
     >
         <Modal.Body>
-        <img src={url} className= "center-image" onClick={handleClose}>
-        </img> </Modal.Body>
+        <img src={url} className= "center-image" onClick={handleClose} alt={author}>
+        </img> 
+        <h1 class="top-left">Author : {author}</h1>
+        </Modal.Body>
       </Modal>
       </div>
   
